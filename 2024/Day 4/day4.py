@@ -36,19 +36,19 @@ if __name__ == "__main__":
     nRows = len(matrix)
     nCols = len(matrix[0])
 
-    vertical = []
-    vertical2 = []
+    diagonal = []
+    diagonal2 = []
 
     diag_ks = list(range(-nRows + 1, nCols))
 
     for k in diag_ks:
         diag = np.diag(matrix, k)
         diag2 = np.diag(np.fliplr(matrix), k)
-        vertical.append(''.join(diag))
-        vertical2.append(''.join(diag2))
+        diagonal.append(''.join(diag))
+        diagonal2.append(''.join(diag2))
     
 
-    print(findXMAS(upToDown) + findXMAS(leftToRight) + findXMAS(vertical) + findXMAS(vertical2)) # Part 1
+    print(findXMAS(upToDown) + findXMAS(leftToRight) + findXMAS(diagonal) + findXMAS(diagonal2)) # Part 1
 
     count = 0
     for i in range(nRows-2):

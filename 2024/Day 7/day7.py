@@ -17,6 +17,8 @@ def checkLine(target, nums, gold = False):
                 total *= nums[j + 1]
             elif combo[j] == 2:
                 total = int(str(total) + str(nums[j + 1]))
+            if total > target: # at least bit faster
+                break
         if total == target:
             return True
     
